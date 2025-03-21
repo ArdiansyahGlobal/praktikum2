@@ -1,20 +1,27 @@
 # masterplan
 
-Jawaban praktikum 1 
-2. Langkah ini bertujuan untuk menyederhanakan impor file model dalam proyek Flutter. 
-Dengan membuat data_layer.dart, kita hanya perlu mengimpor satu file daripada mengimpor setiap model 
-secara terpisah. Ini membuat kode lebih rapi, mudah dikelola, dan lebih scalable seiring bertambahnya 
-model dalam aplikasi.
-3. Variabel plan digunakan untuk menyimpan dan mengelola data rencana (Plan) dalam state agar tampilan 
-dapat diperbarui saat ada perubahan. Deklarasi const Plan() digunakan untuk optimasi performa dan menjaga 
-konsistensi data sebelum ada modifikasi.
+Jawaban praktikum 2
+2. InheritedWidget adalah widget yang memungkinkan data diwariskan ke widget lain 
+dalam subtree tanpa perlu meneruskan parameter secara eksplisit. Pada kode di atas,
+PlanProvider menggunakan InheritedNotifier<ValueNotifier<Plan>>, yang merupakan 
+bentuk khusus dari InheritedWidget.
+Mengapa InheritedNotifier digunakan?
+Karena InheritedNotifier bekerja dengan ValueNotifier, memungkinkan UI otomatis 
+diperbarui saat data berubah tanpa perlu memanggil setState(), sehingga lebih efisien
+dibandingkan InheritedWidget biasa.
+3. ### **Penjelasan Method di Langkah 3**
+**Method `get completedCount`**
+    - Menghitung jumlah tugas (`tasks`) yang sudah selesai (`complete == true`).
+    - Menggunakan `.where()` untuk menyaring tugas yang sudah selesai, lalu `.length` untuk mendapatkan jumlahnya.
+**Method `get completenessMessage`**
+    - Menghasilkan pesan berupa jumlah tugas yang selesai dibandingkan total tugas.
+    - Contohnya: Jika ada **5 tugas** dan **3 sudah selesai**, maka pesan yang dihasilkan adalah **"3 out of 5 tasks"**.
+**Mengapa Dilakukan?**
+- Memudahkan akses informasi jumlah tugas yang selesai tanpa perlu perhitungan manual di UI.
+- Menghindari perhitungan berulang sehingga lebih efisien dan rapi.
+- Memberikan **pesan yang informatif** untuk pengguna mengenai progres tugas mereka.
 4. Hasil screenshot master plan
-![Screenshoot master plan] (images/Hasil ss praktikum 1.png)
-5. Kegunaan Method dalam Lifecycle State
-initState() (Langkah 11) → Dipanggil saat widget pertama kali dibuat. Method ini menginisialisasi 
-scrollController dan menambahkan listener untuk menyembunyikan keyboard saat pengguna menggulir.
-dispose() (Langkah 13) → Dipanggil saat widget dihapus dari tree. Method ini digunakan untuk 
-membersihkan resource dengan memanggil scrollController.dispose() agar tidak terjadi kebocoran memori.
+![Screenshoot master plan] (images/Hasil ss praktikum 2.png)
 
 ## Getting Started
 
