@@ -1,38 +1,16 @@
-# masterplan
+Master Plan
+GIF PRAKTIKUM 2
+![praktikum2](https://github.com/user-attachments/assets/b9b5590f-7929-49ce-9dc3-ed19143b5869)
 
-Jawaban praktikum 2
-2. InheritedWidget adalah widget yang memungkinkan data diwariskan ke widget lain 
-dalam subtree tanpa perlu meneruskan parameter secara eksplisit. Pada kode di atas,
-PlanProvider menggunakan InheritedNotifier<ValueNotifier<Plan>>, yang merupakan 
-bentuk khusus dari InheritedWidget.
-Mengapa InheritedNotifier digunakan?
-Karena InheritedNotifier bekerja dengan ValueNotifier, memungkinkan UI otomatis 
-diperbarui saat data berubah tanpa perlu memanggil setState(), sehingga lebih efisien
-dibandingkan InheritedWidget biasa.
-3. ### **Penjelasan Method di Langkah 3**
-**Method `get completedCount`**
-    - Menghitung jumlah tugas (`tasks`) yang sudah selesai (`complete == true`).
-    - Menggunakan `.where()` untuk menyaring tugas yang sudah selesai, lalu `.length` untuk mendapatkan jumlahnya.
-**Method `get completenessMessage`**
-    - Menghasilkan pesan berupa jumlah tugas yang selesai dibandingkan total tugas.
-    - Contohnya: Jika ada **5 tugas** dan **3 sudah selesai**, maka pesan yang dihasilkan adalah **"3 out of 5 tasks"**.
-**Mengapa Dilakukan?**
-- Memudahkan akses informasi jumlah tugas yang selesai tanpa perlu perhitungan manual di UI.
-- Menghindari perhitungan berulang sehingga lebih efisien dan rapi.
-- Memberikan **pesan yang informatif** untuk pengguna mengenai progres tugas mereka.
-4. Hasil screenshot master plan
-![Screenshoot master plan] (images/Hasil ss praktikum 2.png)
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-//
+Soal Praktikum 2
+Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md! Jika Anda menemukan ada yang error atau tidak berjalan dengan baik, silakan diperbaiki sesuai dengan tujuan aplikasi tersebut dibuat.
+Jelaskan mana yang dimaksud InheritedWidget pada langkah 1 tersebut! Mengapa yang digunakan InheritedNotifier?
+Jelaskan maksud dari method di langkah 3 pada praktikum tersebut! Mengapa dilakukan demikian?
+Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+Kumpulkan laporan praktikum Anda berupa doc !
+Jawaban Praktikum 2
+Program telah berjalan sebagaimana mestinya
+InheritedWidget merujuk pada InheritedNotifier<ValueNotifier> yang digunakan dalam class PlanProvider. InheritedNotifier digunakan karena lebih efisien dalam memperbarui UI dibandingkan InheritedWidget biasa. Dengan menggunakan ValueNotifier, hanya widget yang tergantung pada data yang akan diperbarui saat terjadi perubahan, tanpa merender ulang seluruh widget tree.
+Method completedCount digunakan untuk menghitung jumlah tugas yang telah selesai, sedangkan completenessMessage digunakan untuk menampilkan pesan status penyelesaian tugas dalam format " out of tasks". Mengapa dilakukan demikian? Agar data dapat diakses dengan lebih mudah, meningkatkan efisiensi dengan menghindari pengulangan logika perhitungan di UI, serta memisahkan data dari tampilan sesuai dengan prinsip separation of concerns.
+Pada langkah 9, widget SafeArea ditambahkan di dalam Column, yang berisi teks dari completenessMessage. SafeArea memastikan teks tersebut tidak tertutup oleh elemen sistem seperti notch atau navigation bar. Dengan langkah ini, aplikasi menampilkan pesan jumlah tugas yang selesai dan total tugas yang ada di bagian bawah layar tanpa terhalang UI sistem. Selain itu, implementasi ini juga menunjukkan pemisahan yang baik antara model (Plan) dan view (UI) dalam pengelolaan state aplikasi. (Note: GIF terdapat pada Readme Github)
+Done
