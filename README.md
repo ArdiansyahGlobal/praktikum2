@@ -1,4 +1,7 @@
 GIF Praktikum 2
+
+![image](https://github.com/user-attachments/assets/d559b825-398f-4b96-b716-898aeec77619)
+
  
 
 Soal Praktikum 2
